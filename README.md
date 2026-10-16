@@ -1,1 +1,1 @@
-# Aura-Photography-Studio-
+# Aura Photography Studio
