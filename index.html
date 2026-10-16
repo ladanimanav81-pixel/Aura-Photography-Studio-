@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA // Next-Gen Creative Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Lenis for smooth scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+</head>
+<body>
+
+    <!-- 1. REALISTIC INTERACTIVE CANVAS BACKGROUND -->
+    <canvas id="bgCanvas"></canvas>
+    <div class="ambient-mesh"></div>
+
+    <!-- 2. FIXED GLASS HEADER -->
+    <header class="header">
+        <div class="logo">AURA<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#upload" class="nav-link">Apply</a></li>
+            <li><a href="#terms" class="nav-link">Terms</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="themeBtn" class="btn-theme" aria-label="Toggle Theme">◐</button>
+            <a href="#upload" class="btn btn--primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Book Session</a>
+        </div>
+    </header>
+
+    <div class="content-layer">
+        <!-- 3. HERO SECTION -->
+        <section id="home" class="hero">
+            <span class="badge">Next-Gen Digital Lab</span>
+            <h1>
+                <span class="reveal-mask"><span class="reveal-item">Designing</span></span><br>
+                <span class="reveal-mask"><span class="reveal-item">The Visual</span></span><br>
+                <span class="reveal-mask"><span class="reveal-item" style="color: transparent; -webkit-text-stroke: 1.5px var(--accent);">Future.</span></span>
+            </h1>
+            <p class="hero-desc">Ultra-responsive layouts built with advanced CSS Grid, client-side photo processing, realistic kinetic particle background, and buttery smooth scrolling.</p>
+            <div class="hero-cta">
+                <a href="#upload" class="btn btn--primary">Start a Project</a>
+                <a href="#gallery" class="btn btn--outline">Explore Archive</a>
+            </div>
+        </section>
+
+        <!-- 4. INFINITE MARQUEE -->
+        <div class="marquee-wrapper">
+            <div class="marquee">
+                Digital Aesthetics <span>✦</span> Data-Driven Creativity <span>✦</span> Parallax Kinetic Canvas <span>✦</span> Smooth Lenis Engine <span>✦</span> Digital Aesthetics <span>✦</span> Advanced CSS Grid
+            </div>
+        </div>
+
+        <!-- 5. ABOUT SECTION -->
+        <section id="about">
+            <div class="section-title">
+                <span>Our Story</span>
+                <h2>Pioneering Aesthetics</h2>
+            </div>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin-bottom: 3rem; text-align: center;">
+                We are an independent collective of visual artists, front-end engineers, and creative directors crafting next-generation digital experiences.
+            </p>
+            <div class="grid-2">
+                <article class="info-card">
+                    <span class="num">VISION // 01</span>
+                    <h3>Pushing Boundaries</h3>
+                    <p>Founded on the intersection of modern web engineering and authentic visual art, AURA strives to redefine how creators and visionaries present their digital presence to the global stage.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">METHOD // 02</span>
+                    <h3>Data-Driven Creativity</h3>
+                    <p>We blend analytical performance optimization with boundless creativity. Using clean CSS architectures, BEM methodologies, and hardware-accelerated shaders, every pixel serves an authentic purpose.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6. SERVICES SECTION -->
+        <section id="services">
+            <div class="section-title">
+                <span>Capabilities</span>
+                <h2>Creative Offerings</h2>
+            </div>
+            <div class="grid-2">
+                <article class="info-card">
+                    <span class="num">01</span>
+                    <h3>💻 UI/UX & Web Experiences</h3>
+                    <p>High-performance single-page architectures, fluid CSS Grids, custom theming tokens, and micro-interactions designed for immersive storytelling.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">02</span>
+                    <h3>🎥 Cinematic & Analog Direction</h3>
+                    <p>Editorial photography framing, vintage 16mm film aesthetics, double exposure grading, and bespoke visual curation.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">03</span>
+                    <h3>🧊 3D Rendering & Character Art</h3>
+                    <p>Custom 3D avatars, sticker-art moodboard compositions, and structural CGI renders ready for multi-platform deployment.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">04</span>
+                    <h3>🎨 Brand Identity Systems</h3>
+                    <p>Complete visual stylebooks, typographic hierarchies, color science palettes, and modular digital design kits.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 7. GALLERY -->
+        <section id="gallery">
+            <div class="section-title">
+                <span>Curated Archive</span>
+                <h2>Selected Works</h2>
+            </div>
+            <div class="gallery-grid">
+                <div>
+                    <div class="parallax-card" style="margin-bottom: 2.5rem;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" class="parallax-img" alt="Editorial Fashion">
+                        <div class="parallax-overlay">
+                            <p>Editorial</p>
+                            <h3>Neon Reverie</h3>
+                        </div>
+                    </div>
+                    <div class="parallax-card">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" class="parallax-img" alt="Fashion Portrait">
+                        <div class="parallax-overlay">
+                            <p>Portrait</p>
+                            <h3>Warm Horizons</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-col-offset">
+                    <div class="parallax-card" style="margin-bottom: 2.5rem;">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" class="parallax-img" alt="Monolithic Architecture">
+                        <div class="parallax-overlay">
+                            <p>Architecture / CGI</p>
+                            <h3>Monolithic Heights</h3>
+                        </div>
+                    </div>
+                    <div class="parallax-card">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" class="parallax-img" alt="Analog Friendship">
+                        <div class="parallax-overlay">
+                            <p>Analog Moodboard</p>
+                            <h3>16mm Nostalgia</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. APPLICATION & UPLOAD SECTION -->
+        <section id="upload">
+            <div class="form-box">
+                <div class="section-title" style="margin-bottom: 2.5rem; text-align: left;">
+                    <span>Session Intake</span>
+                    <h2>Apply & Upload Media</h2>
+                </div>
+                <form id="applyForm">
+                    <div class="grid-2">
+                        <div class="floating-group">
+                            <input type="text" id="clientName" class="floating-input" placeholder=" " required>
+                            <label class="floating-label">Full Name</label>
+                        </div>
+                        <div class="floating-group">
+                            <input type="email" id="clientEmail" class="floating-input" placeholder=" " required>
+                            <label class="floating-label">Email Address</label>
+                        </div>
+                    </div>
+
+                    <div class="floating-group">
+                        <select id="clientCategory" class="floating-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="editorial">Editorial Photography Session</option>
+                            <option value="cinematic">Cinematic Direction & Moodboard</option>
+                            <option value="3d-cgi">3D Character Art & CGI Rendering</option>
+                            <option value="brand">Brand Visual Identity System</option>
+                        </select>
+                        <label class="floating-label" style="top: -1.2rem; font-size: 0.8rem; color: var(--accent);">Project Category</label>
+                    </div>
+
+                    <div class="drag-area" id="dropArea">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <h4>Drag & drop reference photos here or <span>browse files</span></h4>
+                        <p>Upload JPG, PNG, WebP up to 15MB each</p>
+                        <input type="file" id="fileInp" accept="image/*" multiple hidden>
+                    </div>
+
+                    <div class="preview-grid" id="previewGallery"></div>
+
+                    <div class="floating-group">
+                        <textarea id="clientBrief" class="floating-input" rows="3" placeholder=" "></textarea>
+                        <label class="floating-label">Creative Brief & Vision</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                    <p id="uploadStatus" style="margin-top: 1.2rem; font-weight: 600; text-align: left;"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- 9. TERMS SECTION -->
+        <section id="terms">
+            <div class="section-title">
+                <span>Legal & Security</span>
+                <h2>Terms & Policies</h2>
+            </div>
+            <div class="grid-3">
+                <article class="info-card">
+                    <span class="num">POLICY // 01</span>
+                    <h3>Client Asset Ownership</h3>
+                    <p>All reference images uploaded via our client intake portal remain strictly under client copyright.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">POLICY // 02</span>
+                    <h3>Production Milestones</h3>
+                    <p>Commissioned creative works require project confirmation through digital retainer agreement.</p>
+                </article>
+                <article class="info-card">
+                    <span class="num">POLICY // 03</span>
+                    <h3>Digital Master Delivery</h3>
+                    <p>Export packages include color-graded TIFF, uncompressed master WebP sets, and licensed metadata.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 10. CONTACT SECTION -->
+        <section id="contact">
+            <div class="grid-2" style="align-items: center; text-align: left;">
+                <div>
+                    <div class="section-title" style="margin-bottom: 2rem; text-align: left;">
+                        <span>Get In Touch</span>
+                        <h2>Let's Collaborate.</h2>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Have an upcoming project or inquiry? Drop us a line.</p>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent); margin-bottom: 0.3rem;">📍 Studio Location</h4>
+                        <p style="font-size: 1.05rem;">Ahmedabad, Gujarat, India</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 0.3rem;">✉️ Direct Inquiries</h4>
+                        <p style="font-size: 1.05rem;">ladanimanav81@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="form-box" style="padding: 2.5rem;">
+                    <form id="contactForm">
+                        <div class="floating-group">
+                            <input type="text" class="floating-input" placeholder=" " required>
+                            <label class="floating-label">Your Name</label>
+                        </div>
+                        <div class="floating-group">
+                            <input type="email" class="floating-input" placeholder=" " required>
+                            <label class="floating-label">Email Address</label>
+                        </div>
+                        <div class="floating-group">
+                            <textarea class="floating-input" rows="3" placeholder=" " required></textarea>
+                            <label class="floating-label">Message / Inquiry</label>
+                        </div>
+                        <button type="submit" class="btn btn--primary" style="width: 100%;">Send Message</button>
+                        <p id="contactStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 AURA Studio. Engineered with pure CSS Grid, Lenis & GSAP.</p>
+            <div class="footer-links">
+                <a href="#terms">Privacy & Terms</a>
+                <a href="#upload">Client Portal</a>
+                <a href="#contact">Contact Studio</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const mouse = { x: width / 2, y: height / 2, radius: 140 };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 1.8 + 0.6;
+                this.density = (Math.random() * 20) + 5;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+            }
+            draw(themeColor) {
+                ctx.fillStyle = themeColor;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx = -this.vx;
+                if (this.y < 0 || this.y > height) this.vy = -this.vy;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    let force = (maxDistance - distance) / maxDistance;
+                    this.x -= forceDirectionX * force * this.density;
+                    this.y -= forceDirectionY * force * this.density;
+                }
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = Math.min(Math.floor((width * height) / 14000), 100);
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function connectParticles(themeLineColor) {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a + 1; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        let opacity = 1 - (dist / 120);
+                        ctx.strokeStyle = themeLineColor(opacity * 0.25);
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            const particleColor = isLight ? 'rgba(2, 132, 199, 0.45)' : 'rgba(56, 189, 248, 0.45)';
+            const lineColorFn = (op) => isLight ? `rgba(2, 132, 199, ${op})` : `rgba(56, 189, 248, ${op})`;
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].draw(particleColor);
+                particles[i].update();
+            }
+            connectParticles(lineColorFn);
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        const lenis = new Lenis({
+            duration: 1.25,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            wheelMultiplier: 1.1
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        const heroTl = gsap.timeline();
+        heroTl.to(".reveal-item", { y: "0%", duration: 1.1, stagger: 0.18, ease: "power4.out", delay: 0.2 })
+              .to(".hero-desc", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.6")
+              .to(".hero-cta", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.7");
+
+        document.querySelectorAll(".parallax-card").forEach(card => {
+            const img = card.querySelector(".parallax-img");
+            gsap.to(img, {
+                y: "22%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        });
+
+        document.querySelectorAll(".grid-2, .grid-3").forEach(grid => {
+            gsap.from(grid.children, {
+                y: 50,
+                opacity: 0,
+                duration: 0.9,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: grid,
+                    start: "top 85%"
+                }
+            });
+        });
+
+        const themeBtn = document.getElementById('themeBtn');
+        const root = document.documentElement;
+
+        if (localStorage.getItem('aura-theme') === 'light') {
+            root.setAttribute('data-theme', 'light');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            if (root.getAttribute('data-theme') === 'light') {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('aura-theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('aura-theme', 'light');
+            }
+        });
+
+        const dropArea = document.getElementById('dropArea');
+        const fileInp = document.getElementById('fileInp');
+        const previewGallery = document.getElementById('previewGallery');
+        const applyForm = document.getElementById('applyForm');
+        const uploadStatus = document.getElementById('uploadStatus');
+        let uploadedFiles = [];
+
+        dropArea.addEventListener('click', () => fileInp.click());
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.add('active');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.remove('active');
+            });
+        });
+
+        dropArea.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = Array.from(dt.files);
+            processUploads(files);
+        });
+
+        fileInp.addEventListener('change', () => {
+            const files = Array.from(fileInp.files);
+            processUploads(files);
+        });
+
+        function processUploads(files) {
+            files.forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+                uploadedFiles.push(file);
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const card = document.createElement('div');
+                    card.className = 'preview-box';
+
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = file.name;
+
+                    const delBtn = document.createElement('button');
+                    delBtn.type = 'button';
+                    delBtn.className = 'preview-box__delete';
+                    delBtn.innerHTML = '&times;';
+                    delBtn.title = 'Remove Photo';
+
+                    delBtn.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        uploadedFiles = uploadedFiles.filter(f => f !== file);
+                        card.remove();
+                    });
+
+                    card.appendChild(img);
+                    card.appendChild(delBtn);
+                    previewGallery.appendChild(card);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        applyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            uploadStatus.style.color = 'var(--accent)';
+            uploadStatus.textContent = `Validating ${uploadedFiles.length} photo(s) & session parameters...`;
+            
+            setTimeout(() => {
+                uploadStatus.style.color = '#10b981';
+                uploadStatus.textContent = `Success! Application and ${uploadedFiles.length} photo reference(s) submitted.`;
+                applyForm.reset();
+                previewGallery.innerHTML = '';
+                uploadedFiles = [];
+            }, 1400);
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        const contactStatus = document.getElementById('contactStatus');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactStatus.style.color = 'var(--accent)';
+            contactStatus.textContent = 'Sending message to studio team...';
+            setTimeout(() => {
+                contactStatus.style.color = '#10b981';
+                contactStatus.textContent = 'Message sent successfully! We will get back to you shortly.';
+                contactForm.reset();
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
